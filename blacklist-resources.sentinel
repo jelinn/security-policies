@@ -58,7 +58,7 @@ validate_resources = func(blacklist) {
 
 # List of blacklisted resources
 blacklist = [
-  "azurerm_network_security_group", "azurerm_network_security_rule", "aws_security_group", "aws_security_group_rule"
+  "azurerm_network_security_group", "azurerm_network_security_rule", "aws_security_group", "aws_security_group_rule",
 ]
 
 ##### Rules #####
