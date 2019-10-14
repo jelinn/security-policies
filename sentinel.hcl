@@ -11,7 +11,7 @@ policy "aws-restrict-instance-type-default" {
 }
 
 policy "change-window-hours" {
-  enforcement_level = "soft-mandatory"
+  enforcement_level = "advisory"
 }
 
 policy "azurerm-restrict-vm-size" {
