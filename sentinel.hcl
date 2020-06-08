@@ -1,9 +1,9 @@
 policy "blacklist-resources" {
-  enforcement_level = "soft-mandatory"
+  enforcement_level = "advisory"
 }
 
 policy "working-hours" {
-  enforcement_level = "soft-mandatory"
+  enforcement_level = "advisory"
 }
 
 policy "aws-restrict-instance-type-default" {
