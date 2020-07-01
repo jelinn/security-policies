@@ -1,5 +1,5 @@
 # This policy prevents any changes (creation, destruction or updates)
-# to blacklisted resources.
+# to denied resources.
 
 ##### Imports #####
 
@@ -39,15 +39,15 @@ find_resources_from_plan = func(type) {
   return resources
 }
 
-# Validate that blacklisted resources are not present
-validate_resources = func(blacklist) {
+# Validate that denied resources are not present
+validate_resources = func(denied) {
   valid = true
 
-  for blacklist as type {
+  for denied as type {
     found_resources = find_resources_from_plan(type)
 
     for found_resources as address, r {
-      print("Blacklisted resource", address, "was found")
+      print("Denied resource", address, "was found")
       valid = false
     }
   }
@@ -56,8 +56,8 @@ validate_resources = func(blacklist) {
 
 ##### Lists #####
 
-# List of blacklisted resources
-blacklist = [
+# List of denied resources
+denied = [
   "azurerm_network_security_group", "azurerm_network_security_rule", "aws_security_group", "aws_security_group_rule",
 ]
 
@@ -65,5 +65,5 @@ blacklist = [
 
 # Main rule
 main = rule {
-  validate_resources(blacklist)
+  validate_resources(denied)
 }
